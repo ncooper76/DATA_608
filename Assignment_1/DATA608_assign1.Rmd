@@ -81,9 +81,13 @@ colnames(state_counts) <- c('State', 'Frequency')
 ggplot(state_counts, aes(x=reorder(State, Frequency),y=Frequency, color=State)) +
   geom_bar(stat='identity', color = 'black', fill=rainbow(52)) +
   coord_flip() + 
-  xlab('US State')
+  xlab('US State')+
+  theme_classic()
 #Ordering adapted from: https://stackoverflow.com/questions/25664007/reorder-bars-in-geom-bar-ggplot2
 ```
+
+
+I wanted to include every state, so the bars are very thin. I used a color gradient with the rainbow pallette to help people distinguish the bars. This does reduce the data-ink ratio quite a bit, but I think, makes the graph far easier to understand.
 
 ## Quesiton 2
 
@@ -106,12 +110,16 @@ ind_means
 
 
 ggplot(ind_means, aes(x=reorder(Industry, mean_emp),y=mean_emp)) +
-  geom_bar(stat='identity', color = 'black', fill=rainbow(25)) +
+  geom_bar(stat='identity', color = 'black', fill='lightgray') +
   geom_errorbar(aes(ymin = mean_emp - emp_sd, ymax = mean_emp + emp_sd), width=0.2) +
   theme(legend.position="none") +
   ylab('Mean Employees')+ xlab('Industry')+ 
-  coord_flip()
+  coord_flip() +
+  theme_classic()
 ```
+
+Since there are fewer bars, but the enough where spacing between them is small, I used light gray with a dark border to help distinguish the bars. This increases the data-ink ratio from the above bar plot.
+
 
 ## Question 3
 
@@ -124,11 +132,12 @@ rev_per_ind <- inc %>% filter(complete.cases(.)) %>% group_by(Industry) %>% filt
 rev_per_ind
 
 ggplot(rev_per_ind , aes(x=reorder(Industry,mean_rev_per_empl),y=mean_rev_per_empl)) +
-  geom_bar(stat='identity', color = 'black', fill=rainbow(25)) +
+  geom_bar(stat='identity', color = 'black', fill='lightgray') +
   geom_errorbar(aes(ymin = mean_rev_per_empl - rev_sd, ymax = mean_rev_per_empl + rev_sd), width=0.2) +
   theme(legend.position="none") +
   ylab('Mean Revenue per Employee')+ xlab('Industry')+
-  coord_flip()
+  coord_flip()+
+  theme_classic()
 ```
 
-
+I used the same design philosophy as number 2.
