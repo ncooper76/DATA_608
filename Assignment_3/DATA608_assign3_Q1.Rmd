@@ -18,11 +18,11 @@ library(tidyverse)
 library(plotly)
 library(rsconnect)
 library(RCurl)
-Sys.setenv("plotly_username"='njcooper137')
-Sys.setenv("plotly_api_key"='xBAwHZxZgXUKSpj91hyr')
-rsconnect::setAccountInfo(name='njcooper137',
-			  token='82AE6C8ADF2421757C35D65A80C7B703',
-			  secret='ycnMuTcRhjUwfGUT2stuMAJpG7C3rsIbgPNqmdjZ')
+Sys.setenv("plotly_username"='********************')
+Sys.setenv("plotly_api_key"='***********************')
+rsconnect::setAccountInfo(name='*********************',
+			  token='***********************',
+			  secret='**********************')
 #rsconnect::deployApp('~/R_Scripts/shinyapp')
 ```
 
