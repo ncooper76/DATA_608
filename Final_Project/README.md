@@ -1,4 +1,4 @@
-The Jupyter Notebook shows the data vizualizations, but the Selection interaction will not work without a bokeh server running.
+https://ncooper76.github.io/orange_v_vectis.html the Selection interaction will not work without a bokeh server running.
 
 To deploy: download NCooper_DATA608_Final_Deployment.py
 
